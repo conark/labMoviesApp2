@@ -12,11 +12,10 @@ const styles = {
 };
 
 export default function CircularIndeterminate() {
-
   return (
     <div sx={styles.root}>
       <CircularProgress />
       <CircularProgress />
     </div>
   );
-}
+};
