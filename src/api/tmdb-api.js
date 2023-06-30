@@ -29,19 +29,35 @@ export const getMovie = (args) => {
  });
 };
   
+  // export const getGenres = async () => {
+  //   return fetch(
+  //     `https://api.themoviedb.org/3/movie/${id}/images?api_key=${import.meta.env.VITE_TMDB_KEY}&language=en-US&include_adult=false&page=1`
+  //   ).then( (response) => {
+  //     if (!response.ok) {
+  //       throw new Error(response.json().message);
+  //     }
+  //     return response.json();
+  //   })
+  //   .catch((error) => {
+  //     throw error
+  //  });
+  // };
+
   export const getGenres = async () => {
     return fetch(
-      `https://api.themoviedb.org/3/movie/${id}/images?api_key=${import.meta.env.VITE_TMDB_KEY}&language=en-US&include_adult=false&page=1`
-    ).then( (response) => {
-      if (!response.ok) {
-        throw new Error(response.json().message);
-      }
-      return response.json();
-    })
-    .catch((error) => {
-      throw error
-   });
+      `https://api.themoviedb.org/3/genre/movie/list?api_key=${import.meta.env.VITE_TMDB_KEY}&language=en-US`
+    )
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(response.json().message);
+        }
+        return response.json();
+      })
+      .catch((error) => {
+        throw error;
+      });
   };
+
   
   export const getMovieImages = ({ queryKey }) => {
     const [, idPart] = queryKey;
@@ -59,19 +75,7 @@ export const getMovie = (args) => {
       throw error
    });
   };
-  // export const getUpcoming = () => {
-  //   return fetch(
-  //     `https://api.themoviedb.org/3/upcoming?api_key=${import.meta.env.VITE_TMDB_KEY}&language=en-US&include_adult=false&include_video=false&page=1`
-  //   ).then((response) => {
-  //     if (!response.ok) {
-  //       throw new Error(response.json().message);
-  //     }
-  //     return response.json();
-  //   })
-  //   .catch((error) => {
-  //     throw error
-  //  });
-  // };  
+
   
   export const getUpcoming = () => {
     return fetch(
