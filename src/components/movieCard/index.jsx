@@ -16,6 +16,7 @@ import img from '../../images/film-poster-placeholder.png'
 import { Link } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
 import { MoviesContext } from "../../contexts/moviesContext";
+import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd'
 
 const styles = {
   card: { maxWidth: 345 },
@@ -34,11 +35,6 @@ export default function MovieCard({ movie, action }) {
     movie.favourite = false
   }
 
-  // const handleAddToFavourite = (e) => {
-  //   e.preventDefault();
-  //   addToFavourites(movie);
-  // };
-
 
   return (
     <Card sx={styles.card}>
@@ -51,6 +47,7 @@ export default function MovieCard({ movie, action }) {
           </Avatar>
         ) : null
       }
+
       title={
         <Typography variant="h5" component="p">
           {movie.title}{" "}
@@ -93,3 +90,5 @@ export default function MovieCard({ movie, action }) {
     </Card>
   );
 }
+
+

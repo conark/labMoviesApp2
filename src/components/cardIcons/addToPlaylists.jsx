@@ -11,7 +11,7 @@ const AddToPlaylistsIcon = ({ movie }) => {
     context.addToPlaylists(movie);
   };
   return (
-    <IconButton aria-label="add to favorites" onClick={onUserSelect}>
+    <IconButton aria-label="add to playlists" onClick={onUserSelect}>
       <PlaylistAddIcon color="primary" fontSize="large" />
     </IconButton>
   );
