@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 import HomeIcon from "@mui/icons-material/Home";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import Avatar from "@mui/material/Avatar";
-import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd'
+// import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd'
 
 
 
@@ -28,8 +28,8 @@ const MovieHeader = (props) => {
   const movie = props.movie;
   const favourites = JSON.parse(localStorage.getItem("favourites"));
   const favoriteMovie = favourites.find((movie) => movie.id === props.movie.id);
-  const playlists = JSON.parse(localStorage.getItem("playlists"));
-  const playlistMovie = playlists.find((movie) => movie.id === props.movie.id);
+  // const playlists = JSON.parse(localStorage.getItem("playlists"));
+  // const playlistMovie = playlists.find((movie) => movie.id === props.movie.id);
   
   return (
     <Paper component="div" sx={styles.root}>
@@ -41,11 +41,11 @@ const MovieHeader = (props) => {
           <FavoriteIcon sx={styles.favoriteIcon} />
         </Avatar>
       )}
-      {playlistMovie && (
+      {/* {playlistMovie && (
         <Avatar sx={styles.avatar}>
           <PlaylistAddIcon sx={styles.playlistAddIcon} />
         </Avatar>
-      )}
+      )} */}
       
       <Typography variant="h4" component="h3">
         {movie.title}{"   "}

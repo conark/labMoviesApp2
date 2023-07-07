@@ -46,6 +46,18 @@ export default function MovieCard({ movie, action }) {
             <FavoriteIcon />
           </Avatar>
         ) : null
+      // <>
+      //   {movie.favourite && (
+      //     <Avatar sx={styles.avatar}>
+      //       <FavoriteIcon />
+      //     </Avatar>
+      //   )}
+      //   {movie.playlist && (
+      //     <Avatar sx={styles.avatar}>
+      //       <PlaylistAddIcon />
+      //     </Avatar>
+      //   )}
+      // </>
       }
 
       title={

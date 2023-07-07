@@ -26,7 +26,7 @@ const MoviesContextProvider = (props) => {
       updatedPlaylists.push(movie.id);
     }
     setPlaylists(updatedPlaylists);
-    console.log(updatedPlaylists)
+    console.log(updatedPlaylists);
   };
 
 
@@ -57,64 +57,3 @@ const MoviesContextProvider = (props) => {
 };
 
 export default MoviesContextProvider;
-// import React, { useState, useEffect } from "react";
-
-
-
-// export const MoviesContext = React.createContext(null);
-
-// const MoviesContextProvider = (props) => {
-//   const [favourites, setFavourites] = useState([]);
-//   const [playlists, setPlaylists] = useState([]);
-//   const [myReviews, setMyReviews] = useState({});
-
-//   const addToFavourites = (movie) => {
-//     setFavourites((prevFavourites) => [...prevFavourites, movie.id]);
-//   };
-
-//   const removeFromFavourites = (movie) => {
-//     setFavourites((prevFavourites) =>
-//       prevFavourites.filter((mId) => mId !== movie.id)
-//     );
-//   };
-
-//   const addToPlaylists = (movie) => {
-//     setPlaylists((prevPlaylists) => [...prevPlaylists, movie.id]);
-//   };
-
-//   const removeFromPlaylists = (movie) => {
-//     setPlaylists((prevPlaylists) =>
-//       prevPlaylists.filter((mId) => mId !== movie.id)
-//     );
-//   };
-
-//   const addReview = (movie, review) => {
-//     setMyReviews((prevReviews) => ({
-//       ...prevReviews,
-//       [movie.id]: review,
-//     }));
-//   };
-
-//   useEffect(() => {
-//     console.log(playlists);
-//   }, [playlists]);
-
-//   return (
-//     <MoviesContext.Provider
-//       value={{
-//         favourites,
-//         addToFavourites,
-//         removeFromFavourites,
-//         playlists,
-//         addToPlaylists,
-//         removeFromPlaylists,
-//         myReviews,
-//         addReview,
-//       }}
-//     >
-//       {props.children}
-//     </MoviesContext.Provider>
-//   );
-// };
-
-// export default MoviesContextProvider;
