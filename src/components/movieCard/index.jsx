@@ -27,7 +27,7 @@ const styles = {
 };
 
 export default function MovieCard({ movie, action }) {
-  const { favourites, addToFavourites } = useContext(MoviesContext);
+  const { favourites, addToFavourites, playlists, addToPlaylists } = useContext(MoviesContext);
 
   if (favourites.find((id) => id === movie.id)) {
     movie.favourite = true;
@@ -35,29 +35,32 @@ export default function MovieCard({ movie, action }) {
     movie.favourite = false
   }
 
+  if (playlists.find((id) => id === movie.id)){
+    movie.playlist = true;
+  } else {
+      movie.playlist = false
+    }
+  
+    const isUpcomingPage = action === "upcoming";
 
   return (
     <Card sx={styles.card}>
     <CardHeader
       sx={styles.header}
       avatar={
+        isUpcomingPage ? (
+          movie.playlist ? (
+            <Avatar sx={styles.avatar}>
+              <PlaylistAddIcon />
+            </Avatar>
+          ) : null
+      ) : (
         movie.favourite ? (
           <Avatar sx={styles.avatar}>
             <FavoriteIcon />
           </Avatar>
         ) : null
-      // <>
-      //   {movie.favourite && (
-      //     <Avatar sx={styles.avatar}>
-      //       <FavoriteIcon />
-      //     </Avatar>
-      //   )}
-      //   {movie.playlist && (
-      //     <Avatar sx={styles.avatar}>
-      //       <PlaylistAddIcon />
-      //     </Avatar>
-      //   )}
-      // </>
+      )
       }
 
       title={

@@ -46,6 +46,7 @@ const MoviesContextProvider = (props) => {
         favourites,
         addToFavourites,
         removeFromFavourites,
+        playlists,
         addToPlaylists,
         removeFromPlaylists,
         addReview,    // NEW
