@@ -154,17 +154,19 @@ export const getMovie = (args) => {
   };
 
 
-  export const getPopularActors = () => {
+  export const getActors = () => {
     return fetch(
        `https://api.themoviedb.org/3/person/popular?api_key=${import.meta.env.VITE_TMDB_KEY}&language=en-US&include_adult=false&include_video=false&page=1`
     )
-      .then((response) => {
+      .then((response) => { 
+        console.log('passssssssssssssssssss')
         if (!response.ok) {
-          throw new Error("Failed to fetch top rated movies.");
+          throw new Error("Failed to get actors.");
         }
         return response.json();
       })
       .catch((error) => {
+        console.log('errorrrrrrrrrrrrrrrrrrrrrrrrrrrrr')
         throw error;
       });
   };
@@ -186,20 +188,21 @@ export const getMovie = (args) => {
    });
   };
 
-  export const getActorDetails = ({ queryKey }) => {
-    const [, idPart] = queryKey;
+
+  export const getActor = (args) => {
+    // console.log(args)
+    const [, idPart] = args.queryKey;
     const { id } = idPart;
     return fetch(
       `https://api.themoviedb.org/3/person/${id}?api_key=${import.meta.env.VITE_TMDB_KEY}`
-    ).then( (response) => {
+    ).then((response) => {
       if (!response.ok) {
         throw new Error(response.json().message);
       }
       return response.json();
-  
+
     })
     .catch((error) => {
       throw error
    });
   };
-  

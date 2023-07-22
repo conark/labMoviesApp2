@@ -15,9 +15,8 @@ import Grid from "@mui/material/Grid";
 import img from '../../images/film-poster-placeholder.png'
 import { Link } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
-import { MoviesContext } from "../../contexts/moviesContext";
-import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd'
-import { useLocation } from 'react-router-dom';
+import { ActorsContext } from "../../contexts/actorsContext";
+
 
 const styles = {
   card: { maxWidth: 345 },
@@ -27,53 +26,30 @@ const styles = {
   },
 };
 
-export default function MovieCard({ movie, action }) {
-  const { favourites, addToFavourites, playlists, addToPlaylists } = useContext(MoviesContext);
+export default function ActorCard({actor, action }) {
+  const { favouriteActors, addToFavouriteActors} = useContext(ActorsContext);
 
-  if (favourites.find((id) => id === movie.id)) {
-    movie.favourite = true;
+  if (favouriteActors.find((id) => id === actor.id)) {
+    actor.favouriteActor = true;
   } else {
-    movie.favourite = false
+    actor.favouriteActor = false
   }
-
-  if (playlists.find((id) => id === movie.id)){
-    movie.playlist = true;
-  } else {
-      movie.playlist = false
-    }
-  
-    const location = useLocation(); // location wo 
-    const currentPath = location.pathname; //ima iru basho
-
-
-    const isUpcomingPage = currentPath === "/movies/upcoming" ;
-
-    // console.log('isUpcomingPage', isUpcomingPage);
-    // console.log('currentPath', currentPath);
 
   return (
     <Card sx={styles.card}>
     <CardHeader
       sx={styles.header}
       avatar={
-        isUpcomingPage ? (
-          movie.playlist ? (
+          actor.favouriteActor ? (
             <Avatar sx={styles.avatar}>
-              <PlaylistAddIcon />
+              <FavoriteIcon />
             </Avatar>
           ) : null
-      ) : (
-        movie.favourite ? (
-          <Avatar sx={styles.avatar}>
-            <FavoriteIcon />
-          </Avatar>
-        ) : null
-      )
       }
 
       title={
         <Typography variant="h5" component="p">
-          {movie.title}{" "}
+          {actor.name}{" "}
         </Typography>
       }
     />
@@ -81,13 +57,13 @@ export default function MovieCard({ movie, action }) {
       <CardMedia
         sx={styles.media}
         image={
-          movie.poster_path
-            ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
-            : img
-        }
+          actors.profile_path
+          ? `https://image.tmdb.org/t/p/w500/${actors.profile_path}` 
+          : img
+      }
       />
       <CardContent>
-        <Grid container>
+        {/* <Grid container>
           <Grid item xs={6}>
             <Typography variant="h6" component="p">
               <CalendarIcon fontSize="small" />
@@ -100,11 +76,11 @@ export default function MovieCard({ movie, action }) {
               {"  "} {movie.vote_average}{" "}
             </Typography>
           </Grid>
-        </Grid>
+        </Grid> */}
       </CardContent>
       <CardActions disableSpacing>
       {action(movie)}
-        <Link to={`/movies/${movie.id}`}>
+        <Link to={`/actors/${actor.id}`}>
           <Button variant="outlined" size="medium" color="primary">
             More Info ...
           </Button>
@@ -113,5 +89,3 @@ export default function MovieCard({ movie, action }) {
     </Card>
   );
 }
-
-
