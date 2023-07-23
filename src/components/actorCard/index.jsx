@@ -27,25 +27,25 @@ const styles = {
 };
 
 export default function ActorCard({actor, action }) {
-  const { favouriteActors, addToFavouriteActors} = useContext(ActorsContext);
+  // const { favouriteActors, addToFavouriteActors} = useContext(ActorsContext);
 
-  if (favouriteActors.find((id) => id === actor.id)) {
-    actor.favouriteActor = true;
-  } else {
-    actor.favouriteActor = false
-  }
+  // if (favouriteActors.find((id) => id === actor.id)) {
+  //   actor.favouriteActor = true;
+  // } else {
+  //   actor.favouriteActor = false
+  // }
 
   return (
     <Card sx={styles.card}>
     <CardHeader
       sx={styles.header}
-      avatar={
-          actor.favouriteActor ? (
-            <Avatar sx={styles.avatar}>
-              <FavoriteIcon />
-            </Avatar>
-          ) : null
-      }
+      // avatar={
+      //     actor.favouriteActor ? (
+      //       <Avatar sx={styles.avatar}>
+      //         <FavoriteIcon />
+      //       </Avatar>
+      //     ) : null
+      // }
 
       title={
         <Typography variant="h5" component="p">
@@ -57,8 +57,8 @@ export default function ActorCard({actor, action }) {
       <CardMedia
         sx={styles.media}
         image={
-          actors.profile_path
-          ? `https://image.tmdb.org/t/p/w500/${actors.profile_path}` 
+          actor.profile_path
+          ? `https://image.tmdb.org/t/p/w500/${actor.profile_path}` 
           : img
       }
       />
@@ -79,7 +79,7 @@ export default function ActorCard({actor, action }) {
         </Grid> */}
       </CardContent>
       <CardActions disableSpacing>
-      {action(movie)}
+      {action(actor)}
         <Link to={`/actors/${actor.id}`}>
           <Button variant="outlined" size="medium" color="primary">
             More Info ...

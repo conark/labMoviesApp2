@@ -3,7 +3,7 @@ import ActorPageTemplate from "../components/templateActorListPage";
 import { getActors } from "../api/tmdb-api";
 import { useQuery } from "react-query";
 import Spinner from "../components/spinner";
-import AddToFavouritesIcon from '../components/cardIcons/addToFavourites'
+import AddToFavouriteActorsIcon from '../components/cardIcons/addToFavouriteActors'
 
 
 const ActorsPage = (props) => {
@@ -21,10 +21,10 @@ const ActorsPage = (props) => {
 
   return (
     <ActorPageTemplate
-      title="Discover Movies"
+      title="Discover Actors"
       actors={actors}
       action={(actor) => {
-        return <AddToFavouritesIcon actor={actor} />
+        return <AddToFavouriteActorsIcon actor={actor} />
       }}
     />
   );
