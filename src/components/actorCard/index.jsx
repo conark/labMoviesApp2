@@ -38,7 +38,7 @@ export default function ActorCard({actor, action }) {
   return (
     <Card sx={styles.card}>
     <CardHeader
-      sx={styles.header}
+      // sx={styles.header}
       // avatar={
       //     actor.favouriteActor ? (
       //       <Avatar sx={styles.avatar}>

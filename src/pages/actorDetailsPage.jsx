@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import ActorDetails from "../components/actorDetails";
-import PageTemplate from "../components/templateActorPage";
+import ActorPageTemplate from "../components/templateActorPage";
 //import useActor from "../hooks/useActor";
 import { getActor } from '../api/tmdb-api'
 import { useQuery } from "react-query";
@@ -28,9 +28,9 @@ const ActorDetailsPage = (props) => {
     <>
       {actor ? (
         <>
-          <PageTemplate actor={actor}>
+          <ActorPageTemplate actor={actor}>
             <ActorDetails actor={actor} />
-          </PageTemplate>
+          </ActorPageTemplate>
         </>
       ) : (
         <p>Waiting for actor details</p>

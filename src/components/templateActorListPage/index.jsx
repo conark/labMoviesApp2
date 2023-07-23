@@ -19,24 +19,21 @@ const styles = {
 };
 
 function ActorListPageTemplate({ actors, title, action }) {
-//   const [titleFilter, setTitleFilter] = useState("");
+  const [nameFilter, setNameFilter] = useState("");
 //   const [genreFilter, setGenreFilter] = useState("0");
 //   const [drawerOpen, setDrawerOpen] = useState(false);
 
   // const genreId = Number(genreFilter);
 
   let displayedActors = actors
-//     .filter((m) => {
-//       return m.title.toLowerCase().search(titleFilter.toLowerCase()) !== -1;
-//     })
-//     .filter((m) => {
-//       return genreId > 0 ? m.genre_ids.includes(genreId) : true;
-//     });
+    .filter((m) => {
+      return m.name.toLowerCase().search(nameFilter.toLowerCase()) !== -1;
+    })
 
-//   const handleChange = (type, value) => {
-//     if (type === "title") setTitleFilter(value);
-//     else setGenreFilter(value);
-//   };
+  const handleChange = (type, value) => {
+    if (type === "name") setNameFilter(value);
+    else setNameFilter(value);
+  };
 
   return (
    <>
@@ -56,17 +53,16 @@ function ActorListPageTemplate({ actors, title, action }) {
       >
         Filter
       </Fab>
-      {/* <Drawer
-        anchor="left"
-        open={drawerOpen}
-        onClose={() => setDrawerOpen(false)}
+      <Drawer
+        // anchor="left"
+        // open={drawerOpen}
+        // onClose={() => setDrawerOpen(false)}
       >
         <FilterCard
           onUserInput={handleChange}
-          titleFilter={titleFilter}
-          genreFilter={genreFilter}
+          nameFilter={nameFilter}
         />
-      </Drawer> */}
+      </Drawer>
     </>  
   );
 }
