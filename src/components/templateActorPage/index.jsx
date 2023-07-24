@@ -21,6 +21,7 @@ const styles = {
 };
 
 const TemplateActorPage = ({ actor, children }) => {
+  console.log('actor temp and actor id: ' + actor.id)
     const { data , error, isLoading, isError } = useQuery(
       ["images", { id: actor.id }],
       getActorImages

@@ -20,6 +20,7 @@ const styles = {
 };
 
 const TemplateMoviePage = ({ movie, children }) => {
+     console.log('movie temp')
     const { data , error, isLoading, isError } = useQuery(
       ["images", { id: movie.id }],
       getMovieImages

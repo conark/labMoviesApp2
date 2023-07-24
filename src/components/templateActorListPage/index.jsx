@@ -19,6 +19,7 @@ const styles = {
 };
 
 function ActorListPageTemplate({ actors, title, action }) {
+  console.log('actor list temp')
   const [nameFilter, setNameFilter] = useState("");
 //   const [genreFilter, setGenreFilter] = useState("0");
 //   const [drawerOpen, setDrawerOpen] = useState(false);

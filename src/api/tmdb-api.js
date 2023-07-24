@@ -177,6 +177,7 @@ export const getMovie = (args) => {
     return fetch(
       `https://api.themoviedb.org/3/person/${id}/images?api_key=${import.meta.env.VITE_TMDB_KEY}`
     ).then( (response) => {
+      console.log('images okkkkk')
       if (!response.ok) {
         throw new Error(response.json().message);
       }
@@ -184,6 +185,7 @@ export const getMovie = (args) => {
   
     })
     .catch((error) => {
+      console.log('images noooo')
       throw error
    });
   };
@@ -196,6 +198,7 @@ export const getMovie = (args) => {
     return fetch(
       `https://api.themoviedb.org/3/person/${id}?api_key=${import.meta.env.VITE_TMDB_KEY}`
     ).then((response) => {
+      console.log('get actor OKKKKKK')
       if (!response.ok) {
         throw new Error(response.json().message);
       }
@@ -203,6 +206,7 @@ export const getMovie = (args) => {
 
     })
     .catch((error) => {
+      console.log('get actor noooooo')
       throw error
    });
   };

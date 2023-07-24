@@ -19,6 +19,7 @@ const styles = {
 };
 
 function MovieListPageTemplate({ movies, title, action }) {
+  console.log('movie List temp')
   const [titleFilter, setTitleFilter] = useState("");
   const [genreFilter, setGenreFilter] = useState("0");
   const [drawerOpen, setDrawerOpen] = useState(false);

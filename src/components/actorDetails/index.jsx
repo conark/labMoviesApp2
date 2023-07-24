@@ -32,6 +32,7 @@ const styles = {
 };
 
 const ActorDetails = ( {actor}) => {
+  console.log('actor detail')
   const [drawerOpen, setDrawerOpen] = useState(false); // New
 
   return (

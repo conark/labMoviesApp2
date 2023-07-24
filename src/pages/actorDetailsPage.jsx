@@ -16,6 +16,8 @@ const ActorDetailsPage = (props) => {
     getActor
   );
 
+  console.log('actor detail page/page    '+id)
+
   if (isLoading) {
     return <Spinner />;
   }

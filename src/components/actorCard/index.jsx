@@ -27,6 +27,7 @@ const styles = {
 };
 
 export default function ActorCard({actor, action }) {
+  console.log('actor Card dayooooo')
   // const { favouriteActors, addToFavouriteActors} = useContext(ActorsContext);
 
   // if (favouriteActors.find((id) => id === actor.id)) {
