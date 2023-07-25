@@ -42,13 +42,13 @@ export default function MovieCard({ movie, action }) {
       movie.playlist = false
     }
   
-    const location = useLocation(); // location wo 
-    const currentPath = location.pathname; //ima iru basho
+    const location = useLocation(); // page location
+    const currentPath = location.pathname; //ima iru basho no path
 
 
-    const isUpcomingPage = currentPath === "/movies/upcoming" ;
+    const isPlaylistIconPage = currentPath === "/movies/upcoming" || currentPath === "/movies/playlists";
 
-    // console.log('isUpcomingPage', isUpcomingPage);
+    // console.log('isPlaylistIconPage', isPlaylistIconPage);
     // console.log('currentPath', currentPath);
 
   return (
@@ -56,7 +56,7 @@ export default function MovieCard({ movie, action }) {
     <CardHeader
       sx={styles.header}
       avatar={
-        isUpcomingPage ? (
+        isPlaylistIconPage ? (
           movie.playlist ? (
             <Avatar sx={styles.avatar}>
               <PlaylistAddIcon />
