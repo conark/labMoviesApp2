@@ -95,6 +95,7 @@ export const getMovie = (args) => {
        `https://api.themoviedb.org/3/movie/popular?api_key=${import.meta.env.VITE_TMDB_KEY}&language=en-US&include_adult=false&include_video=false&page=1`
     )
       .then((response) => {
+        console.log('popularrrrrr')
         if (!response.ok) {
           throw new Error("Failed to fetch popular movies.");
         }
