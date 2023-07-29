@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Header from "../headerMovieList";
 import FilterCard from "../filterMoviesCard";
+// import FilterActorCard from "../filterActorsCard";
 import Grid from "@mui/material/Grid";
 import Fab from "@mui/material/Fab";
 import Drawer from "@mui/material/Drawer";
@@ -21,10 +22,8 @@ const styles = {
 function ActorListPageTemplate({ actors, title, action }) {
   console.log('actor list temp')
   const [nameFilter, setNameFilter] = useState("");
-//   const [genreFilter, setGenreFilter] = useState("0");
-//   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
-  // const genreId = Number(genreFilter);
 
   let displayedActors = actors
     .filter((m) => {
@@ -55,9 +54,9 @@ function ActorListPageTemplate({ actors, title, action }) {
         Filter
       </Fab>
       <Drawer
-        // anchor="left"
-        // open={drawerOpen}
-        // onClose={() => setDrawerOpen(false)}
+        anchor="left"
+        open={drawerOpen}
+        onClose={() => setDrawerOpen(false)}
       >
         <FilterCard
           onUserInput={handleChange}

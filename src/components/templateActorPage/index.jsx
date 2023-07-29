@@ -8,6 +8,7 @@ import { useQuery } from "react-query";
 import Spinner from '../spinner'
 
 
+
 const styles = {
   gridListRoot: {
     display: "flex",
@@ -35,6 +36,7 @@ const TemplateActorPage = ({ actor, children }) => {
       return <h1>{error.message}</h1>;
     }
     const images = data.posters
+
 
   return (
     <>

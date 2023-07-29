@@ -12,6 +12,7 @@ const ActorsContextProvider = (props) => {
       updatedFavouriteActors.push(actor.id);
     }
     setFavouriteActors(updatedFavouriteActors);
+    console.log(updatedFavouriteActors);
   };
 
   // We will use this function in a later section

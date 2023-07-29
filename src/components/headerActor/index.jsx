@@ -47,11 +47,11 @@ const ActorHeader = (props) => {
       
       <Typography variant="h4" component="h3">
         {actor}{"   "}
-        {/* <a href={movie.homepage}>
+        <a href={movie.homepage}>
           <HomeIcon color="primary"  fontSize="='large"/>
         </a>
         <br />
-        <span>{`${movie.tagline}`} </span> */}
+        <span> </span>
       </Typography>
       <IconButton aria-label="go forward">
         <ArrowForwardIcon color="primary" fontSize="large" />

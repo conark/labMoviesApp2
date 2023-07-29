@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Navigate, Routes, Link } from "react-router-dom";
 import HomePage from "./pages/homePage";
 import MoviePage from "./pages/movieDetailsPage";
-import FavouriteMoviesPage from "./pages/favouriteMoviesPage"; // NEW
+import FavouriteMoviesPage from "./pages/favouriteMoviesPage"; 
 import MovieReviewPage from "./pages/movieReviewPage";
 import SiteHeader from './components/siteHeader'
 import { QueryClientProvider, QueryClient } from "react-query";
@@ -16,6 +16,8 @@ import ActorsPage from "./pages/actorsPage";
 import PlaylistsPage from "./pages/playlistsPage";
 import PopularMoviesPage from "./pages/popularMoviesPage";
 import TopRatedMoviesPage from "./pages/topRatedMoviesPage";
+import ActorsContextProvider from "./contexts/actorsContext";
+import FavouriteActorsPage from "./pages/favouriteActorsPage";
 
 
 const queryClient = new QueryClient({
@@ -45,10 +47,21 @@ const App = () => {
               <Route path="/" element={<HomePage />} />
               <Route path="*" element={<Navigate to="/" />} />
               <Route path="/reviews/form" element={<AddMovieReviewPage/>} />
-              <Route path="/actors/:id" element={<ActorDetailsPage/>} />
-              <Route path="/movies/actors/" element={<ActorsPage />} />
             </Routes>
         </MoviesContextProvider>
+
+        <ActorsContextProvider>
+        <Routes>
+            <Route path="/actors/:id" element={<ActorDetailsPage/>} />
+            <Route path="/movies/actors/" element={<ActorsPage />} />
+            <Route path="/movies/favouriteactors/" element={<FavouriteActorsPage />} />
+          </Routes>
+        </ActorsContextProvider>
+
+
+
+
+
       </BrowserRouter>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>

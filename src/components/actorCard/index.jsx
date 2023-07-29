@@ -28,25 +28,25 @@ const styles = {
 
 export default function ActorCard({actor, action }) {
   console.log('actor Card dayooooo')
-  // const { favouriteActors, addToFavouriteActors} = useContext(ActorsContext);
+  const { favouriteActors, addToFavouriteActors} = useContext(ActorsContext);
 
-  // if (favouriteActors.find((id) => id === actor.id)) {
-  //   actor.favouriteActor = true;
-  // } else {
-  //   actor.favouriteActor = false
-  // }
+  if (favouriteActors.find((id) => id === actor.id)) {
+    actor.favouriteActor = true;
+  } else {
+    actor.favouriteActor = false
+  }
 
   return (
     <Card sx={styles.card}>
     <CardHeader
-      // sx={styles.header}
-      // avatar={
-      //     actor.favouriteActor ? (
-      //       <Avatar sx={styles.avatar}>
-      //         <FavoriteIcon />
-      //       </Avatar>
-      //     ) : null
-      // }
+      sx={styles.header}
+      avatar={
+          actor.favouriteActor ? (
+            <Avatar sx={styles.avatar}>
+              <FavoriteIcon />
+            </Avatar>
+          ) : null
+      }
 
       title={
         <Typography variant="h5" component="p">
