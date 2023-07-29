@@ -12,7 +12,7 @@ import Spinner from '../spinner'
 
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import { getActor } from "../../api/tmdb-api";
+import { getActors } from "../../api/tmdb-api";
 
 
 
@@ -30,7 +30,7 @@ const styles = {
 };
 
 export default function FilterActorsCard(props) {
-    const { data, error, isLoading, isError } = useQuery("actorData", getActor);
+    const { data, error, isLoading, isError } = useQuery("actorData", getActors);
 
 
   if (isLoading) {

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Header from "../headerMovieList";
-import FilterCard from "../filterMoviesCard";
-// import FilterActorCard from "../filterActorsCard";
+// import FilterCard from "../filterMoviesCard";
+import FilterActorsCard from "../filterActorsCard";
 import Grid from "@mui/material/Grid";
 import Fab from "@mui/material/Fab";
 import Drawer from "@mui/material/Drawer";
@@ -58,7 +58,7 @@ function ActorListPageTemplate({ actors, title, action }) {
         open={drawerOpen}
         onClose={() => setDrawerOpen(false)}
       >
-        <FilterCard
+        <FilterActorsCard
           onUserInput={handleChange}
           nameFilter={nameFilter}
         />
