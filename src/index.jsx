@@ -36,6 +36,7 @@ const App = () => {
       <BrowserRouter>
         <SiteHeader />
           <MoviesContextProvider>
+          <ActorsContextProvider>
             <Routes>
               <Route path="/reviews/:id" element={<MovieReviewPage/>} />
               <Route path="/movies/favourites" element={<FavouriteMoviesPage />} />
@@ -47,16 +48,13 @@ const App = () => {
               <Route path="/" element={<HomePage />} />
               <Route path="*" element={<Navigate to="/" />} />
               <Route path="/reviews/form" element={<AddMovieReviewPage/>} />
+              <Route path="/actors/:id" element={<ActorDetailsPage/>} />
+              <Route path="/movies/actors/" element={<ActorsPage />} />
+              <Route path="/movies/favouriteactors/" element={<FavouriteActorsPage />} />
             </Routes>
+            </ActorsContextProvider>
         </MoviesContextProvider>
-
-        <ActorsContextProvider>
-        <Routes>
-            <Route path="/actors/:id" element={<ActorDetailsPage/>} />
-            <Route path="/movies/actors/" element={<ActorsPage />} />
-            <Route path="/movies/favouriteactors/" element={<FavouriteActorsPage />} />
-          </Routes>
-        </ActorsContextProvider>
+        
 
 
 

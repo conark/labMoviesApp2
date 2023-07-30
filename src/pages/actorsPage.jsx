@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import ActorPageTemplate from "../components/templateActorListPage";
+import ActorListPageTemplate from "../components/templateActorListPage";
 import { getActors } from "../api/tmdb-api";
 import { useQuery } from "react-query";
 import Spinner from "../components/spinner";
@@ -7,8 +7,8 @@ import AddToFavouriteActorsIcon from '../components/cardIcons/addToFavouriteActo
 
 
 const ActorsPage = (props) => {
-  const { data, error, isLoading, isError } = useQuery("discover", getActors);
-  console.log('actors page')
+  const { data, error, isLoading, isError } = useQuery("actors", getActors);
+  console.log('data:::',data)
   if (isLoading) {
     return <Spinner />;
   }
@@ -20,7 +20,7 @@ const ActorsPage = (props) => {
 
 
   return (
-    <ActorPageTemplate
+    <ActorListPageTemplate
       title="Discover Actors"
       actors={actors}
       action={(actor) => {

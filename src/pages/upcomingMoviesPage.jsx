@@ -19,8 +19,10 @@ const UpcomingMoviesPage = (props) => {
     return <h1>{error.message}</h1>
   }  
   const movies = data.results;
+  console.log('movies11111',movies)
 
-  const playlist = movies.filter((m) => m.playlist);
+  const playlist = movies.filter((movie) => movie.playlist === true);
+  console.log("playlist",playlist)
   localStorage.setItem("playlists", JSON.stringify(playlist));
 
 

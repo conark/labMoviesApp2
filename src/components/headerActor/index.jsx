@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Paper from "@mui/material/Paper";
@@ -6,7 +6,9 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import HomeIcon from "@mui/icons-material/Home";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import Avatar from "@mui/material/Avatar";
+import Avatar from "@mui/material/Avatar"
+import { ActorsContext } from "../../contexts/actorsContext";
+
 
 
 
@@ -29,8 +31,9 @@ const styles = {
 
 const ActorHeader = (props) => {
   const actor = props.actor;
-  const favouriteActors = JSON.parse(localStorage.getItem("favouriteActors"));
-  const favoriteActor = favouriteActors.find((actor) => actor.id === props.actor.id);
+  const { favouriteActors: actorIds } = useContext(ActorsContext);
+  // const favouriteActors = JSON.parse(localStorage.getItem("favouriteActors"));
+  const favoriteActor = actorIds.find((actorId) => actorId === props.actor.id);
 
   
   return (
@@ -46,10 +49,10 @@ const ActorHeader = (props) => {
 
       
       <Typography variant="h4" component="h3">
-        {actor}{"   "}
-        <a href={movie.homepage}>
+        {actor.name}
+        {/* <a href={movie.homepage}>
           <HomeIcon color="primary"  fontSize="='large"/>
-        </a>
+        </a> */}
         <br />
         <span> </span>
       </Typography>

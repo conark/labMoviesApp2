@@ -26,9 +26,12 @@ function ActorListPageTemplate({ actors, title, action }) {
 
 
   let displayedActors = actors
+  
     .filter((m) => {
+      console.log('m:::',m)
       return m.name.toLowerCase().search(nameFilter.toLowerCase()) !== -1;
     })
+    
 
   const handleChange = (type, value) => {
     if (type === "name") setNameFilter(value);
