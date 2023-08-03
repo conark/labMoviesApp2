@@ -1,4 +1,4 @@
-import React from "react";  // useState/useEffect redundant 
+import React, { useState } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
@@ -13,6 +13,8 @@ import Spinner from '../spinner'
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import { getGenres } from "../../api/tmdb-api";
+import { getAverageDesc } from "../../api/tmdb-api";
+// import { getAverageAsc } from "../../api/tmdb-api";
 
 
 const styles = {
@@ -43,6 +45,8 @@ export default function FilterMoviesCard(props) {
     genres.unshift({ id: "0", name: "All" });
   }
 
+
+
   const handleUserImput = (e, type, value) => {
     e.preventDefault();
     props.onUserInput(type, value); // NEW
@@ -54,6 +58,11 @@ export default function FilterMoviesCard(props) {
 
   const handleGenreChange = (e) => {
     handleUserImput(e, "genre", e.target.value);
+  };
+
+  const handleSortChange = (e) => {
+    const value = e.target.value;
+    props.onUserInput("sort", value); 
   };
 
   return (
@@ -98,6 +107,18 @@ export default function FilterMoviesCard(props) {
             <SortIcon fontSize="large" />
             Sort the movies.
           </Typography>
+          <FormControl sx={styles.formControl}>
+            <InputLabel id="sort-label">Sort By Rating</InputLabel>
+            <Select
+              labelId="sort-label"
+              id="sort-select"
+              value={props.selectedSort}
+              onChange={handleSortChange}
+            >
+              <MenuItem value="average.desc">Rating Descending</MenuItem>
+              <MenuItem value="average.asc">Rating Ascending</MenuItem>
+            </Select>
+          </FormControl>
         </CardContent>
       </Card>
       </>

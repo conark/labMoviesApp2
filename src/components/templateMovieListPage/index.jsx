@@ -23,6 +23,8 @@ function MovieListPageTemplate({ movies, title, action }) {
   const [titleFilter, setTitleFilter] = useState("");
   const [genreFilter, setGenreFilter] = useState("0");
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [selectedSort, setSelectedSort] = useState("average.desc");
+
 
   const genreId = Number(genreFilter);
 
@@ -32,11 +34,28 @@ function MovieListPageTemplate({ movies, title, action }) {
     })
     .filter((m) => {
       return genreId > 0 ? m.genre_ids.includes(genreId) : true;
-    });
+    })
+    if (selectedSort === "average.desc") {
+      displayedMovies.sort((a, b) => b.average - a.average);
+    } else if (selectedSort === "average.asc") {
+      displayedMovies.sort((a, b) => a.average - b.average);
+    }
+    ;
+
+
+  // const handleChange = (type, value) => {
+  //   if (type === "title") setTitleFilter(value);
+  //   else setGenreFilter(value);
+  // };
 
   const handleChange = (type, value) => {
-    if (type === "title") setTitleFilter(value);
-    else setGenreFilter(value);
+    if (type === "title") {
+      setTitleFilter(value);
+    } else if (type === "genre") {
+      setGenreFilter(value);
+    } else if (type === "sort") {
+      setSelectedSort(value);
+    }
   };
 
   return (
@@ -66,6 +85,8 @@ function MovieListPageTemplate({ movies, title, action }) {
           onUserInput={handleChange}
           titleFilter={titleFilter}
           genreFilter={genreFilter}
+          // onUserInput={handleUserInput}
+          selectedSort={selectedSort}
         />
       </Drawer>
     </>  

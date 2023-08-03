@@ -213,4 +213,55 @@ export const getMovie = (args) => {
   };
 
 
- 
+
+  export const getId = (args) => {
+    // console.log(args)
+    const [, idPart] = args.queryKey;
+    const { id } = idPart;
+    return fetch(
+      `https://api.themoviedb.org /3/find/{external_id}?api_key=${import.meta.env.VITE_TMDB_KEY}`
+    ).then((response) => {
+      console.log('get id')
+      if (!response.ok) {
+        throw new Error(response.json().message);
+      }
+      return response.json();
+
+    })
+    .catch((error) => {
+      console.log('get id')
+      throw error
+   });
+  };
+  
+
+
+  export const getAverageDesc = async () => {
+    return fetch(
+      `http://api.themoviedb.org/3/discover/movie?sort_by=vote_average.desc?api_key=${import.meta.env.VITE_TMDB_KEY}&language=en-US`
+    )
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(response.json().message);
+        }
+        return response.json();
+      })
+      .catch((error) => {
+        throw error;
+      });
+  };
+
+  // export const getAverageAsc = async () => {
+  //   return fetch(
+  //     `http://api.themoviedb.org/3/discover/movie?sort_by=vote_average.asc?api_key=${import.meta.env.VITE_TMDB_KEY}&language=en-US`
+  //   )
+  //     .then((response) => {
+  //       if (!response.ok) {
+  //         throw new Error(response.json().message);
+  //       }
+  //       return response.json();
+  //     })
+  //     .catch((error) => {
+  //       throw error;
+  //     });
+  // };
