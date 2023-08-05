@@ -238,7 +238,7 @@ export const getMovie = (args) => {
 
   export const getAverageDesc = async () => {
     return fetch(
-      `http://api.themoviedb.org/3/discover/movie?sort_by=vote_average.desc?api_key=${import.meta.env.VITE_TMDB_KEY}&language=en-US`
+      `http://api.themoviedb.org/3/discover/movie?sort_by=vote_average.desc&api_key=${import.meta.env.VITE_TMDB_KEY}&language=en-US`
     )
       .then((response) => {
         console.log('get average desc')

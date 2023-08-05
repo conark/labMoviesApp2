@@ -48,7 +48,7 @@ export default function FilterMoviesCard(props) {
     genres.unshift({ id: "0", name: "All" });
   }
 
-  const averageDesc = data.averageDesc
+  const averageDesc = averageDescData;
 
 
 
