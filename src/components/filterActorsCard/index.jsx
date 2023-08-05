@@ -31,6 +31,8 @@ const styles = {
 
 export default function FilterActorsCard(props) {
     const { data, error, isLoading, isError } = useQuery("actorData", getActors);
+    
+
 
 
   if (isLoading) {

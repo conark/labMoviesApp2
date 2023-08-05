@@ -241,12 +241,14 @@ export const getMovie = (args) => {
       `http://api.themoviedb.org/3/discover/movie?sort_by=vote_average.desc?api_key=${import.meta.env.VITE_TMDB_KEY}&language=en-US`
     )
       .then((response) => {
+        console.log('get average desc')
         if (!response.ok) {
           throw new Error(response.json().message);
         }
         return response.json();
       })
       .catch((error) => {
+        console.log('error get average desc')
         throw error;
       });
   };

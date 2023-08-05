@@ -31,7 +31,10 @@ const styles = {
 };
 
 export default function FilterMoviesCard(props) {
-  const { data, error, isLoading, isError } = useQuery("genres",() => getGenres(props.id));
+  const { data, error, isLoading, isError } = useQuery("genres",() => getGenres(props.id))
+  const { data: averageDescData, error: averageDescError, isLoading: averageDescIsLoading, isError: averageDescIsError } = useQuery("averageDesc", getAverageDesc);
+
+  
 
   if (isLoading) {
     return <Spinner />;
@@ -44,6 +47,8 @@ export default function FilterMoviesCard(props) {
   if (genres[0].name !== "All") {
     genres.unshift({ id: "0", name: "All" });
   }
+
+  const averageDesc = data.averageDesc
 
 
 
@@ -61,9 +66,9 @@ export default function FilterMoviesCard(props) {
   };
 
   const handleSortChange = (e) => {
-    const value = e.target.value;
-    props.onUserInput("sort", value); 
+    props.onUserInput(e,"sort", e.target.value);
   };
+
 
   return (
     <>
@@ -103,7 +108,7 @@ export default function FilterMoviesCard(props) {
     </Card>
     <Card sx={styles.root} variant="outlined">
         <CardContent>
-          <Typography variant="h5" component="h1">
+        <Typography variant="h5" component="h1">
             <SortIcon fontSize="large" />
             Sort the movies.
           </Typography>

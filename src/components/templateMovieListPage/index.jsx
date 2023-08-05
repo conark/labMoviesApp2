@@ -48,7 +48,7 @@ function MovieListPageTemplate({ movies, title, action }) {
   //   else setGenreFilter(value);
   // };
 
-  const handleChange = (type, value) => {
+  const handleUserInput = (type, value) => {
     if (type === "title") {
       setTitleFilter(value);
     } else if (type === "genre") {
@@ -82,10 +82,9 @@ function MovieListPageTemplate({ movies, title, action }) {
         onClose={() => setDrawerOpen(false)}
       >
         <FilterCard
-          onUserInput={handleChange}
+          onUserInput={handleUserInput}
           titleFilter={titleFilter}
           genreFilter={genreFilter}
-          // onUserInput={handleUserInput}
           selectedSort={selectedSort}
         />
       </Drawer>
