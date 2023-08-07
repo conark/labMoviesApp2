@@ -1,71 +1,119 @@
 
 # Full Stack Development 2 - Assignment.
 
-__Name:__ [your full name]
+__Name:__ Natsumi Shimizu
 
 ## Features.
 
 [A bullet-point list of the features developed for the React SPA app (only new/modified ones for the Movies app),]
 
-+ Feature X.
-+ Feature Y. 
-+ etc.
++ Popular Movie List
++ Top Rated List
++ Must Watch Icon/List
++ Create own movie
++ Display created movie
++ Actor's List
++ Favourite Actors List
++ Filter with actor's name
++ Sort movies by rating dec/asc
 
 ## Feature Design.
 
-[ For each feature listed above, show a screenshot(s) of its UI layout (use appropriate magnification for accessibility). Include a caption with each image.]
 
-e.g. 
+#### Popular Movie List
 
-#### Upcoming Movies.
+> Lists movies from the popular movies endpoint of TMDB.
 
-> Lists movies from the Upcoming movies endpoint of TMDB.
+![][01image]
 
-![][image1]
+#### Top Rated List
 
-#### Movies Reviews.
+> Lists movies from the toprated movies endpoint of TMDB.
 
-> Lists all the reviews for a particular movie (shows text extract only).
+![][02image]
 
-![][image2]
 
-> Click the 'Full Review' link of a review extract to see the review's full text. 
+## Must Watch Icon/List
 
-![][image3]
+> when playlist icon cliked on the upcoming page, playlist icon display on movie card header
 
-.... other features .......
+![][03image]
 
-## Storybook.
+> Display Must watch movies
 
-[Include a screenshot(s) from the Storybook UI and highlight the stories for new components developed.]
+![][04image]
 
-e.g.
+## Create own movie
 
-![][image5]
+> Create own movies form save to moviesContext
 
-## Authentication. (if relevant)
+![][05image]
+
+## Display created movie
+
+> Display created movie
+
+![][06image]
+
+
+## Actor's List
+
+> Lists actors from the persons endpoint of TMDB.
+
+![][07image]
+
+
+## Favourite Actors List
+
+> Lists favourite actors
+
+![][08image]
+
+
+## Filter by actor's name
+
+> filter by actor's name from the persons endpoint of TMDB.
+
+
+![][09image]
+
+## Sort movies by rating dec/asc
+
+> filter by actor's name from the sort endpoint of TMDB.
+
+
+> sort by dec
+
+![][10image]
+
+> sort by asc
+
+![][11image]
+
+
+
 
 #### Protected routes 
 
 [List all the routes in your app and highlight those that are protected/private (require authentication).]
 
-e.g.
++ "/reviews/:id"(Protected) - Specific full text of a movies review
++ "/movies/favourites" - List of favourite Movies
++ "/movies/playlists" - List of Must watch(playlist) Movies
++ "/movies/upcoming" - List of upcoming Movies from the upcoming endpoint,
++ "/movies/popular" - List of popular Movies from the popular endpoint,
++ "/movies/toprated" - List of popular Movies from the top rate endpoint,
++ "/movies/:id" (Protected) - Detailed information of a specific movie.
++ "/" - Home page
++ "*" - navigate to homepage
++ "/reviews/form" - form for add review , using context
++ "/actors/:id"(Protected) - A specific actor's bio.
++ "/movies/actors/" - List of actors from the person endpoint,
++ "/movies/favouriteactors/" - List of favourite Movies
++ "/movies/addmovie/" - form for add own movie ,using context
++ "/movies/mymovie/" - List of created Movies
 
-+ /movies - List of 20  movies from the Discover endpoint,
-+ /movies/{movie_id} - Detailed information on a specific movie.
-+ /reviews/{review_id} (Protected) - The full text of a movie review.
-+ /movie/{movie_id}/similar - A list of similar movies. 
-+ /person/{person_id} (Protected) - A specific actor's bio.
-+ etc
-+ etc
 
-#### Protected functionality. (if relevant)
-
-[ Briefly state any app functionality that requires authentication, e.g. only authenticated users can tag a movie as a 'favourite'.]
-
-#### Supabase (if relevant)
-
-[Include a screenshot(s) from your Supabase account that verifies its use for this app. ]
 
 ## Deployment (if relevant).
 
@@ -74,16 +122,16 @@ e.g.
 Username: test1 ; Password: pass1
 ]
 
-## Persistence (if relevant).
 
-[If you are persisting data to the Supabase backend (e.g. favourite movies, fantasy movie), include screenshots with appropriate captions to verify this aspect. ]
 
-## Additional Information.
-
-[ Briefly explain any other aspects of your app's design or implementation that is non-standard and worthy of mention.]
-
-[image1]: ./images/image1.png
-[image2]: ./images/image2.png
-[image3]: ./images/image3.png
-[image4]: ./images/image4.png
-[image5]: ./images/image5.png
+[01image]: ./images/01image.png
+[02image]: ./images/02image.png
+[03image]: ./images/03image.png
+[04image]: ./images/04image.png
+[05image]: ./images/05image.png
+[06image]: ./images/06image.png
+[07image]: ./images/07image.png
+[08image]: ./images/08image.png
+[09image]: ./images/09image.png
+[10image]: ./images/10image.png
+[11image]: ./images/11image.png
