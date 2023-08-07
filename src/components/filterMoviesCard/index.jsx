@@ -13,7 +13,7 @@ import Spinner from '../spinner'
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import { getGenres } from "../../api/tmdb-api";
-import { getAverageDesc } from "../../api/tmdb-api";
+
 // import { getAverageAsc } from "../../api/tmdb-api";
 
 
@@ -32,7 +32,7 @@ const styles = {
 
 export default function FilterMoviesCard(props) {
   const { data, error, isLoading, isError } = useQuery("genres",() => getGenres(props.id))
-  const { data: averageDescData, error: averageDescError, isLoading: averageDescIsLoading, isError: averageDescIsError } = useQuery("averageDesc", getAverageDesc);
+  
 
   
 
@@ -48,7 +48,7 @@ export default function FilterMoviesCard(props) {
     genres.unshift({ id: "0", name: "All" });
   }
 
-  const averageDesc = averageDescData;
+  
 
 
 
@@ -66,7 +66,7 @@ export default function FilterMoviesCard(props) {
   };
 
   const handleSortChange = (e) => {
-    props.onUserInput(e,"sort", e.target.value);
+    handleUserImput(e,"sort", e.target.value);
   };
 
 
