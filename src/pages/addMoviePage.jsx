@@ -5,7 +5,7 @@ import { useLocation } from "react-router-dom";
 import { useQuery } from "react-query";
 import Spinner from "../components/spinner";
 
-const WriteReviewPage = (props) => {
+const AddMoviePage = (props) => {
     
 //   const location = useLocation()
 //   const { movieId } = location.state;
@@ -27,4 +27,4 @@ const WriteReviewPage = (props) => {
   );
 };
 
-export default WriteReviewPage;
+export default AddMoviePage;

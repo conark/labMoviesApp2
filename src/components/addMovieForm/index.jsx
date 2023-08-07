@@ -11,6 +11,7 @@ import styles from "./styles";
 import genres from "./genreCategories";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
+import { v4 as uuidv4 } from "uuid";
 
 const AddMovieForm = (props) => {
 
@@ -43,8 +44,10 @@ const AddMovieForm = (props) => {
     // navigate("/movies/addMovie/");
   };
 
+  const newMovieId = uuidv4();
+
   const onSubmit = (addMovie) => {
-    // addMovie.movieId = movie.id;
+    addMovie.movieId = newMovieId;
     addMovie.genre = genre;
     context.addMovie(addMovie);
     console.log(addMovie);
@@ -70,7 +73,7 @@ const AddMovieForm = (props) => {
           onClose={handleSnackClose}
         >
           <Typography variant="h4">
-            Thank you for submitting a review
+            Thank you for creating a movie
           </Typography>
         </Alert>
       </Snackbar>
