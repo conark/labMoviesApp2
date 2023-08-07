@@ -33,13 +33,13 @@ __Name:__ Natsumi Shimizu
 ![][02image]
 
 
-### Must Watch Icon/List
+### Must Watch Icon
 
 > when playlist icon cliked on the upcoming page, playlist icon display on movie card header
 
 ![][03image]
 
-> Display Must watch movies
+### Display Must watch movies
 
 ![][04image]
 
