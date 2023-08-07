@@ -20,20 +20,20 @@ __Name:__ Natsumi Shimizu
 ## Feature Design.
 
 
-#### Popular Movie List
+### Popular Movie List
 
 > Lists movies from the popular movies endpoint of TMDB.
 
 ![][01image]
 
-#### Top Rated List
+### Top Rated List
 
 > Lists movies from the toprated movies endpoint of TMDB.
 
 ![][02image]
 
 
-## Must Watch Icon/List
+### Must Watch Icon/List
 
 > when playlist icon cliked on the upcoming page, playlist icon display on movie card header
 
@@ -43,41 +43,41 @@ __Name:__ Natsumi Shimizu
 
 ![][04image]
 
-## Create own movie
+### Create own movie
 
 > Create own movies form save to moviesContext
 
 ![][05image]
 
-## Display created movie
+### Display created movie
 
 > Display created movie
 
 ![][06image]
 
 
-## Actor's List
+### Actor's List
 
 > Lists actors from the persons endpoint of TMDB.
 
 ![][07image]
 
 
-## Favourite Actors List
+### Favourite Actors List
 
 > Lists favourite actors
 
 ![][08image]
 
 
-## Filter by actor's name
+### Filter by actor's name
 
 > filter by actor's name from the persons endpoint of TMDB.
 
 
 ![][09image]
 
-## Sort movies by rating dec/asc
+### Sort movies by rating dec/asc
 
 > filter by actor's name from the sort endpoint of TMDB.
 
@@ -93,7 +93,7 @@ __Name:__ Natsumi Shimizu
 
 
 
-#### Protected routes 
+## Routes 
 
 [List all the routes in your app and highlight those that are protected/private (require authentication).]
 
@@ -114,13 +114,6 @@ __Name:__ Natsumi Shimizu
 + "/movies/mymovie/" - List of created Movies
 
 
-
-## Deployment (if relevant).
-
-[Specify the URL of your deployed app and include a screenshot(s) from your deployment platform account (e.g. Vercal) that verifies its use for this app. Set up a registered user for your app and specify their credentials.
-
-Username: test1 ; Password: pass1
-]
 
 
 
